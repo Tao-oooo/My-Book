@@ -34,7 +34,7 @@ Git 工具包可以去官方网站下载，并安装。
 ![Git 软件](../images/Git的使用/image-9.png)
 其中， Git Bash 就是 Git 工具的命令行窗口，后续的 GitHub 相关操作都会在此命令行窗口中执行。
 
-## 在 Github 上添加 SSH Key
+## 本地生成 SSH Key
 在 GitHub 上添加 SSH Key 之前需要在本地先生成 SSH Key。
 打开上面讲到的 Git Bash 命令行窗口，先使用以下命令配置一下 Git Config：
 ```bash
@@ -50,7 +50,10 @@ ssh-keygen -t rsa -C "emile-name@email.com"
 这里的邮箱也要与 Github 上的一致，使用此命令后，如果不需要做其他特殊设置的话可以一路回车到底，最后 Git Bash 上可见如下的画面：
 ![生成 SSH Key](../images/Git的使用/image-1.png)
 
-然后使用如下命令查看 SSH Key 的内容：
+有时候，这一步可能会出现下图所示的生成失败的情况，这个时候可以使用管理员打开CMD，将上述命令在CMD中执行即可。
+![image-15](../images/Git的使用/image-15.png)
+
+然后回到Git Bash中使用如下命令查看 SSH Key 的内容：
 ```bash
 cat ~/.ssh/id_rsa.pub
 ```
@@ -58,6 +61,10 @@ cat ~/.ssh/id_rsa.pub
 ![查看 SSH Key](../images/Git的使用/image-2.png)
 
 最后复制上述 SSH Key 的内容，填到 Github 网站即可。
+
+## 在GitHub上添加SSH Key
+
+
 
 ## 从本地仓库上传代码到 Github 上
 ### 检查是否与 Github 连接成功
